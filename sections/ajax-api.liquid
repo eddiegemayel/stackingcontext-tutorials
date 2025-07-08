@@ -19,12 +19,23 @@
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        items: [{
-          id: variantId,
-          quantity: quantity
-        }]
+        items: [
+          {
+            id: variantId,
+            quantity: quantity,
+            properties: {
+              _test: "_test"
+            }
+          },
+          {
+            id: 44413356376260,
+            quantity: 2
+          }
+        ]
       })
     });
+
+    window.location.reload();
   }
 
 
