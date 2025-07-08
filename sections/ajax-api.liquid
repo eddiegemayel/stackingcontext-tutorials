@@ -1,0 +1,17 @@
+<script>
+  const cartRequest = await fetch("/cart.json");
+  const cart = await cartRequest.json();
+
+  console.log(cart);
+</script>
+
+{% schema %}
+{
+  "name": "Ajax Api",
+  "presets": [
+    {
+      "name": "Ajax Api"
+    }
+  ]
+}
+{% endschema %}
