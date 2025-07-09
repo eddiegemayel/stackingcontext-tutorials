@@ -13,25 +13,17 @@
   }
 
   async function addToCart(variantId, quantity) {
+    const LINE_ITEM_KEY = "44413356376260:218ef23945774e8af3b82dec44e0c9d";
+
     const addToCartRequest = await fetch("/cart/add.js", {
       method: "post",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        items: [
-          {
-            id: variantId,
-            quantity: quantity,
-            properties: {
-              _test: "_test"
-            }
-          },
-          {
-            id: 44413356376260,
-            quantity: 2
-          }
-        ],
+        updates: {
+          [LINE_ITEM_KEY]: 5,
+        },
         attributes: {
           "cart_test": "cart test"
         },
